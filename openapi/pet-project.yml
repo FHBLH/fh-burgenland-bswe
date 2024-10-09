@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Pet project
+  description: |-
+    A collection of endpoints and functionality used in the SWM lesson.
+  version: 1.0.0
+paths:
+  /upper:
+    get:
+      summary: Converts a String to upper case.
+      description: Takes a String as input (via query parameter) and returns this String in all upper case.
+      operationId: upper
+      tags:
+        - string
+      parameters:
+        - name: string
+          description: The input String.
+          in: query
+          required: true
+          schema:
+            type: string
+          example: test
+      responses:
+        '200':
+          description: A String in upper case.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: TEST
